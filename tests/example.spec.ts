@@ -1,16 +1,12 @@
-import { test,expect } from "../fixtures/testFixture";
+import {test,expect} from '../fixtures/testStoreFixture'
 
-test.describe('Fixture Setup',()=>{
-  
-  test.beforeEach(async({google})=>{
-   await google.navigate()
-   
-  })
-  test('Lets run',async({google})=>{
-  
-    console.log(await google.getTitle())
-    
-    
-    
-  })
+test.describe('Start launch',()=>{
+    test.beforeEach(async({store})=>{
+        await store.navigate()
+    })
+    test('Lets watch',async({store})=>{
+        console.log(await store.getTitle())
+        await store.loginOrRegister()
+        await store.page.pause()
+    })
 })
