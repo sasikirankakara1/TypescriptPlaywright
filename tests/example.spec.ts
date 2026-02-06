@@ -7,6 +7,9 @@ test.describe('Start launch',()=>{
     test('Lets watch',async({store})=>{
         console.log(await store.getTitle())
         await store.loginOrRegister()
+        await store.login("Hellos")
+        await store.clickSpecificTab("Account")
+        
         await store.page.pause()
     })
 })
